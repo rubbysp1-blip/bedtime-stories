@@ -20,11 +20,13 @@ public class App {
         try {
 
             if(storyChoice.equalsIgnoreCase("Goldi Locks")){
-                BufferedReader bufferedReader = new BufferedReader(new FileReader("goldilocks.txt"));
+                BufferedReader bufferedReader = new BufferedReader(new FileReader("goldi_locks.txt"));
 
                 String line;
+                int numberLine = 1;
                 while((line = bufferedReader.readLine()) != null){
-                    System.out.println(line);
+                    System.out.println(numberLine + " " + line);
+                    numberLine ++;
                 }
             }
 
@@ -32,8 +34,10 @@ public class App {
                 BufferedReader bufferedReader = new BufferedReader(new FileReader("hansel_and_gretel.txt"));
 
                 String line;
+                int numberLine = 1;
                 while((line = bufferedReader.readLine()) != null){
-                    System.out.println(line);
+                    System.out.println(numberLine + " " + line);
+                    numberLine ++;
                 }
             }
 
@@ -41,19 +45,15 @@ public class App {
                 BufferedReader bufferedReader = new BufferedReader(new FileReader("mary_had_a_little_lamb.txt"));
 
                 String line;
+                int numberLine = 1;
                 while((line = bufferedReader.readLine()) != null){
-                    System.out.println("---------------------------------\n" + line);
+                    System.out.println(numberLine + " " + line);
+                    numberLine ++;
                 }
             }
-
-
-
-
-
-
         } catch (IOException e) {
             System.out.println("Sorry could not read file or not one of the stories.");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
 
