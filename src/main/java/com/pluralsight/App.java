@@ -15,9 +15,10 @@ public class App {
                     Goldi Locks
                     Hansel and Gretel
                     Mary had a little lamb:\s""");
-        String storyChoice = input.nextLine();
+        String storyChoice = input.nextLine().trim();
 
         try {
+
             if(storyChoice.equalsIgnoreCase("Goldi Locks")){
                 BufferedReader bufferedReader = new BufferedReader(new FileReader("goldilocks.txt"));
 
@@ -25,10 +26,25 @@ public class App {
                 while((line = bufferedReader.readLine()) != null){
                     System.out.println(line);
                 }
-
             }
 
-            //FileReader fileReader = new FileReader("goldilocks.txt");
+            if(storyChoice.equalsIgnoreCase("Hansel and Gretel")){
+                BufferedReader bufferedReader = new BufferedReader(new FileReader("hansel_and_gretel.txt"));
+
+                String line;
+                while((line = bufferedReader.readLine()) != null){
+                    System.out.println(line);
+                }
+            }
+
+            if(storyChoice.equalsIgnoreCase("Mary had a little lamb")){
+                BufferedReader bufferedReader = new BufferedReader(new FileReader("mary_had_a_little_lamb.txt"));
+
+                String line;
+                while((line = bufferedReader.readLine()) != null){
+                    System.out.println("---------------------------------\n" + line);
+                }
+            }
 
 
 
@@ -36,6 +52,7 @@ public class App {
 
 
         } catch (IOException e) {
+            System.out.println("Sorry could not read file or not one of the stories.");
             e.printStackTrace();
         }
 
