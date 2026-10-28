@@ -21,6 +21,7 @@ public class App {
             String line;
             int numberLine = 1;
             String fileName = "";
+
             switch (storyChoice) {
                 case "goldi locks" -> fileName = "goldilocks.txt";
                 case "hansel and gretel"-> fileName = "hansel_and_gretel.txt";
@@ -33,38 +34,8 @@ public class App {
                 System.out.println(numberLine + " " + line);
                 numberLine ++;
             }
-            bufferedReader.close();
 
-//            if(storyChoice.equalsIgnoreCase("Goldi Locks")){
-//                BufferedReader bufferedReader = new BufferedReader(new FileReader("goldilocks.txt"));
-//
-//                //String line;
-//                //int numberLine = 1;
-//
-//            }
-//
-//            if(storyChoice.equalsIgnoreCase("Hansel and Gretel")){
-//                BufferedReader bufferedReader = new BufferedReader(new FileReader("hansel_and_gretel.txt"));
-//
-//                //String line;
-//                //int numberLine = 1;
-//                while((line = bufferedReader.readLine()) != null){
-//                    System.out.println(numberLine + " " + line);
-//                    numberLine ++;
-//                }
-//            }
-//
-//            if(storyChoice.equalsIgnoreCase("Mary had a little lamb")){
-//                BufferedReader bufferedReader = new BufferedReader(new FileReader("mary_had_a_little_lamb.txt"));
-//
-//                //String line;
-//                //int numberLine = 1;
-//                while((line = bufferedReader.readLine()) != null){
-//                    System.out.println(numberLine + " " + line);
-//                    numberLine ++;
-//                }
-//                bufferedReader.close();
-//            }
+            bufferedReader.close();
 
         } catch (IOException e) {
             System.out.println("Sorry could not read file or not one of the stories.");
