@@ -15,42 +15,57 @@ public class App {
                     Goldi Locks
                     Hansel and Gretel
                     Mary had a little lamb:\s""");
-        String storyChoice = input.nextLine().trim();
+        String storyChoice = input.nextLine().trim().toLowerCase();
 
         try {
-
-            if(storyChoice.equalsIgnoreCase("Goldi Locks")){
-                BufferedReader bufferedReader = new BufferedReader(new FileReader("goldi_locks.txt"));
-
-                String line;
-                int numberLine = 1;
-                while((line = bufferedReader.readLine()) != null){
-                    System.out.println(numberLine + " " + line);
-                    numberLine ++;
-                }
+            String line;
+            int numberLine = 1;
+            String fileName = "";
+            switch (storyChoice) {
+                case "goldi locks" -> fileName = "goldilocks.txt";
+                case "hansel and gretel"-> fileName = "hansel_and_gretel.txt";
+                case "mary had a little lamb"-> fileName = "mary_had_a_little_lamb.txt";
             }
 
-            if(storyChoice.equalsIgnoreCase("Hansel and Gretel")){
-                BufferedReader bufferedReader = new BufferedReader(new FileReader("hansel_and_gretel.txt"));
-
-                String line;
-                int numberLine = 1;
-                while((line = bufferedReader.readLine()) != null){
-                    System.out.println(numberLine + " " + line);
-                    numberLine ++;
-                }
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
+            System.out.println("-------------------------------");
+            while((line = bufferedReader.readLine()) != null){
+                System.out.println(numberLine + " " + line);
+                numberLine ++;
             }
+            bufferedReader.close();
 
-            if(storyChoice.equalsIgnoreCase("Mary had a little lamb")){
-                BufferedReader bufferedReader = new BufferedReader(new FileReader("mary_had_a_little_lamb.txt"));
+//            if(storyChoice.equalsIgnoreCase("Goldi Locks")){
+//                BufferedReader bufferedReader = new BufferedReader(new FileReader("goldilocks.txt"));
+//
+//                //String line;
+//                //int numberLine = 1;
+//
+//            }
+//
+//            if(storyChoice.equalsIgnoreCase("Hansel and Gretel")){
+//                BufferedReader bufferedReader = new BufferedReader(new FileReader("hansel_and_gretel.txt"));
+//
+//                //String line;
+//                //int numberLine = 1;
+//                while((line = bufferedReader.readLine()) != null){
+//                    System.out.println(numberLine + " " + line);
+//                    numberLine ++;
+//                }
+//            }
+//
+//            if(storyChoice.equalsIgnoreCase("Mary had a little lamb")){
+//                BufferedReader bufferedReader = new BufferedReader(new FileReader("mary_had_a_little_lamb.txt"));
+//
+//                //String line;
+//                //int numberLine = 1;
+//                while((line = bufferedReader.readLine()) != null){
+//                    System.out.println(numberLine + " " + line);
+//                    numberLine ++;
+//                }
+//                bufferedReader.close();
+//            }
 
-                String line;
-                int numberLine = 1;
-                while((line = bufferedReader.readLine()) != null){
-                    System.out.println(numberLine + " " + line);
-                    numberLine ++;
-                }
-            }
         } catch (IOException e) {
             System.out.println("Sorry could not read file or not one of the stories.");
             //e.printStackTrace();
